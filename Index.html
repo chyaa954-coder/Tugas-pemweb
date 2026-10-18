@@ -1,404 +1,332 @@
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Website Pribadi Saya</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Website Pribadi Saya</title>
 
-<style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-body {
-    font-family: Arial, sans-serif;
-    background: linear-gradient(180deg, #d5edff, #f4faff, #d3eaff);
-    color: #10458d;
-    min-height: 100vh;
-    overflow-x: hidden;
-}
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #d9efff, #f5fbff);
+      color: #123c82;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
 
-.container {
-    width: 100%;
-    max-width: 650px;
-    margin: auto;
-    padding: 25px 22px 45px;
-    text-align: center;
-    position: relative;
-    z-index: 1;
-}
-
-/* Hiasan hewan lucu */
-.animal {
-    position: fixed;
-    z-index: 0;
-    font-size: clamp(45px, 10vw, 95px);
-    opacity: 0.9;
-    pointer-events: none;
-}
-
-.cat {
-    top: 25px;
-    left: -12px;
-}
-
-.chick {
-    top: 90px;
-    right: -8px;
-}
-
-.bear {
-    bottom: 20px;
-    left: -15px;
-}
-
-.penguin {
-    bottom: 20px;
-    right: -12px;
-}
-
-.cloud {
-    position: fixed;
-    z-index: 0;
-    font-size: 100px;
-    color: #9ccfff;
-    opacity: 0.45;
-    pointer-events: none;
-}
-
-.cloud-left {
-    bottom: 5px;
-    left: -30px;
-}
-
-.cloud-right {
-    top: 180px;
-    right: -35px;
-}
-
-/* Judul */
-.greeting {
-    font-size: clamp(20px, 4vw, 30px);
-    letter-spacing: 5px;
-    font-weight: bold;
-    margin-bottom: 22px;
-}
-
-.profile {
-    width: 210px;
-    height: 210px;
-    margin: 0 auto 20px;
-    border: 7px solid #1765c0;
-    outline: 3px solid #a6d4ff;
-    border-radius: 50%;
-    overflow: hidden;
-    box-shadow: 0 8px 20px #2868a638;
-    background: white;
-}
-
-.profile img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-}
-
-h1 {
-    font-family: Georgia, serif;
-    font-size: clamp(30px, 6vw, 43px);
-    line-height: 1.2;
-    margin: 18px 0 12px;
-    color: #10458d;
-}
-
-.subtitle {
-    font-size: clamp(16px, 3.5vw, 21px);
-    line-height: 1.6;
-    margin-bottom: 20px;
-}
-
-.divider {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 25px;
-    font-size: 40px;
-    margin: 12px 0 28px;
-}
-
-.divider span {
-    width: 100px;
-    height: 3px;
-    background: #377ecb;
-}
-
-/* Tombol menu */
-.menu {
-    display: flex;
-    flex-direction: column;
-    gap: 13px;
-}
-
-.menu a {
-    display: flex;
-    align-items: center;
-    min-height: 84px;
-    padding: 10px 22px;
-    border-radius: 60px;
-    text-decoration: none;
-    color: white;
-    background: linear-gradient(110deg, #0752b4, #2879d7);
-    border: 5px solid #a6d4ff;
-    box-shadow:
-        0 4px 0 #6ca8e9,
-        0 8px 18px #2865a82c;
-    transition: 0.25s;
-}
-
-.menu a:hover {
-    transform: translateY(-3px);
-    background: linear-gradient(110deg, #1769c8, #4697ec);
-}
-
-.menu-icon {
-    width: 58px;
-    height: 58px;
-    min-width: 58px;
-    border-radius: 50%;
-    background: #e7f4ff;
-    color: #10458d;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 29px;
-}
-
-.menu-text {
-    flex: 1;
-    text-align: left;
-    margin-left: 22px;
-    font-size: clamp(13px, 2.8vw, 19px);
-    font-weight: bold;
-    letter-spacing: 1.5px;
-}
-
-.arrow {
-    font-size: 32px;
-    font-weight: bold;
-    margin-left: 8px;
-}
-
-/* Hiasan kecil */
-.paw {
-    position: fixed;
-    z-index: 0;
-    color: #5ca5f4;
-    font-size: 38px;
-    opacity: 0.7;
-    pointer-events: none;
-}
-
-.paw-one {
-    top: 35%;
-    left: 5%;
-}
-
-.paw-two {
-    top: 45%;
-    right: 5%;
-}
-
-.paw-three {
-    bottom: 28%;
-    left: 5%;
-}
-
-.paw-four {
-    bottom: 30%;
-    right: 5%;
-}
-
-.heart {
-    position: fixed;
-    z-index: 0;
-    color: #428de8;
-    font-size: 40px;
-    opacity: 0.75;
-    pointer-events: none;
-}
-
-.heart-one {
-    top: 28%;
-    left: 3%;
-}
-
-.heart-two {
-    top: 40%;
-    right: 3%;
-}
-
-/* Tampilan HP */
-@media (max-width: 480px) {
     .container {
-        padding: 28px 17px 40px;
+      max-width: 1100px;
+      margin: auto;
+      padding: 35px 25px;
+      position: relative;
     }
 
-    .greeting {
-        letter-spacing: 3px;
-        margin-bottom: 22px;
+    .header {
+      text-align: center;
+      margin-bottom: 30px;
     }
 
-    .profile {
-        width: 175px;
-        height: 175px;
+    .header h2 {
+      font-size: 30px;
+      letter-spacing: 7px;
+      margin-bottom: 20px;
     }
 
-    h1 {
-        font-size: 33px;
+    .header p {
+      font-size: 17px;
+      color: #2459a2;
+    }
+
+    .content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+    }
+
+    .left {
+      flex: 1;
+      text-align: center;
+      min-width: 0;
+    }
+
+    .right {
+      flex: 0 1 350px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .profile-photo {
+      width: 300px;
+      height: 390px;
+      object-fit: cover;
+      object-position: center;
+      border: 7px solid #347bd7;
+      border-radius: 35px;
+      box-shadow: 0 12px 25px #7ab7ed80;
+      background: white;
+    }
+
+    .title {
+      font-family: Georgia, serif;
+      font-size: 36px;
+      line-height: 1.3;
+      margin: 15px 0;
+      color: #103c85;
     }
 
     .subtitle {
-        font-size: 16px;
+      font-size: 18px;
+      margin-bottom: 22px;
+      line-height: 1.6;
     }
 
-    .divider {
-        gap: 18px;
-        margin-bottom: 25px;
-    }
-
-    .divider span {
-        width: 65px;
+    .heart {
+      font-size: 32px;
+      margin-bottom: 25px;
     }
 
     .menu {
-        gap: 13px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      max-width: 480px;
+      margin: 0 auto;
     }
 
     .menu a {
-        min-height: 76px;
-        padding: 8px 13px;
-        border-width: 4px;
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      padding: 12px 18px;
+      min-height: 72px;
+      border-radius: 50px;
+      border: 3px solid #a9d6ff;
+      background: linear-gradient(100deg, #0753b9, #2878db);
+      color: white;
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      box-shadow: 0 5px 0 #8ebeea,
+                  0 8px 15px #4d8dd333;
+      transition: 0.25s;
     }
 
-    .menu-icon {
-        width: 52px;
-        height: 52px;
-        min-width: 52px;
-        font-size: 25px;
+    .menu a:hover {
+      transform: translateY(-3px);
+      background: #06449a;
     }
 
-    .menu-text {
-        margin-left: 14px;
-        letter-spacing: 1px;
+    .icon {
+      width: 48px;
+      height: 48px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: #edf8ff;
+      color: #124b9b;
+      font-size: 25px;
     }
 
     .arrow {
-        font-size: 27px;
+      margin-left: auto;
+      font-size: 27px;
     }
 
-    .animal {
-        font-size: 48px;
+    .animals {
+      text-align: center;
+      font-size: 35px;
+      margin: 25px 0;
+      letter-spacing: 10px;
     }
-}
-</style>
+
+    .decoration {
+      position: fixed;
+      font-size: 48px;
+      opacity: 0.8;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .cat { top: 20px; left: 10px; }
+    .chick { top: 25px; right: 15px; }
+    .bear { bottom: 10px; left: 15px; }
+    .penguin { bottom: 10px; right: 15px; }
+
+    footer {
+      text-align: center;
+      padding: 30px 10px;
+      color: #2459a2;
+      font-size: 14px;
+    }
+
+    @media (max-width: 760px) {
+      .container {
+        padding: 25px 16px;
+      }
+
+      .header h2 {
+        font-size: 23px;
+        letter-spacing: 4px;
+      }
+
+      .content {
+        flex-direction: column;
+        gap: 25px;
+      }
+
+      .left {
+        width: 100%;
+      }
+
+      .right {
+        order: -1;
+        width: 100%;
+      }
+
+      .profile-photo {
+        width: 210px;
+        height: 245px;
+        border-radius: 28px;
+      }
+
+      .title {
+        font-size: 29px;
+      }
+
+      .subtitle {
+        font-size: 16px;
+      }
+
+      .menu {
+        width: 100%;
+      }
+
+      .menu a {
+        min-height: 65px;
+        padding: 9px 14px;
+        font-size: 13px;
+      }
+
+      .icon {
+        width: 43px;
+        height: 43px;
+      }
+
+      .decoration {
+        font-size: 32px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<!-- Hewan-hewan lucu -->
-<div class="animal cat">🐱</div>
-<div class="animal chick">🐥</div>
-<div class="animal bear">🐻</div>
-<div class="animal penguin">🐧</div>
+  <div class="decoration cat">🐱</div>
+  <div class="decoration chick">🐥</div>
+  <div class="decoration bear">🧸</div>
+  <div class="decoration penguin">🐧</div>
 
-<!-- Awan, jejak kaki, dan hati -->
-<div class="cloud cloud-left">☁</div>
-<div class="cloud cloud-right">☁</div>
+  <main class="container">
 
-<div class="paw paw-one">🐾</div>
-<div class="paw paw-two">🐾</div>
-<div class="paw paw-three">🐾</div>
-<div class="paw paw-four">🐾</div>
+    <header class="header">
+      <h2>💙 HALO SEMUANYA! 💙</h2>
+      <p>🐾 Selamat datang di website pribadi saya 🐾</p>
+    </header>
 
-<div class="heart heart-one">♡</div>
-<div class="heart heart-two">♡</div>
+    <section class="content">
 
-<main class="container">
+      <div class="left">
 
-    <p class="greeting">❧ HALO SEMUANYA! ❧</p>
+        <h1 class="title">
+          Selamat Datang<br>
+          Di Web Saya
+        </h1>
 
-    <div class="profile">
-        <img src="foto.jpg" alt="Foto profil saya">
-    </div>
+        <p class="subtitle">
+          🐾 Mengenal lebih dekat tentang saya 🐾
+        </p>
 
-    <h1>Selamat Datang Di Web Saya</h1>
+        <div class="heart">──── ♡ ────</div>
 
-    <p class="subtitle">
-        🐾 Mengenal lebih dekat tentang saya 🐾
-    </p>
+        <nav class="menu">
 
-    <div class="divider">
-        <span></span>
-        ♡
-        <span></span>
-    </div>
-
-    <nav class="menu">
-
-        <a href="profile.html">
-            <span class="menu-icon">♙</span>
-            <span class="menu-text">MY PROFILE</span>
+          <a href="profil.html">
+            <span class="icon">♙</span>
+            <span>MY PROFILE</span>
             <span class="arrow">›</span>
-        </a>
+          </a>
 
-        <a href="about.html">
-            <span class="menu-icon">♡</span>
-            <span class="menu-text">ABOUT ME</span>
+          <a href="about.html">
+            <span class="icon">♡</span>
+            <span>ABOUT ME</span>
             <span class="arrow">›</span>
-        </a>
+          </a>
 
-        <a href="hobbies.html">
-            <span class="menu-icon">✿</span>
-            <span class="menu-text">MY HOBBIES</span>
+          <a href="hobi.html">
+            <span class="icon">🌸</span>
+            <span>MY HOBBIES</span>
             <span class="arrow">›</span>
-        </a>
+          </a>
 
-        <a href="education.html">
-            <span class="menu-icon">🎓</span>
-            <span class="menu-text">EDUCATION</span>
+          <a href="pendidikan.html">
+            <span class="icon">🎓</span>
+            <span>EDUCATION</span>
             <span class="arrow">›</span>
-        </a>
+          </a>
 
-        <a href="schedule.html">
-            <span class="menu-icon">▦</span>
-            <span class="menu-text">CLASS SCHEDULE</span>
+          <a href="jadwal.html">
+            <span class="icon">▦</span>
+            <span>CLASS SCHEDULE</span>
             <span class="arrow">›</span>
-        </a>
+          </a>
 
-        <a href="table1.html">
-            <span class="menu-icon">▤</span>
-            <span class="menu-text">TABLE 1</span>
+          <a href="tabel1.html">
+            <span class="icon">▤</span>
+            <span>TABLE 1</span>
             <span class="arrow">›</span>
-        </a>
+          </a>
 
-        <a href="table2.html">
-            <span class="menu-icon">▤</span>
-            <span class="menu-text">TABLE 2</span>
+          <a href="tabel2.html">
+            <span class="icon">▤</span>
+            <span>TABLE 2</span>
             <span class="arrow">›</span>
-        </a>
+          </a>
 
-        <a href="table3.html">
-            <span class="menu-icon">▤</span>
-            <span class="menu-text">TABLE 3</span>
-            <span class="arrow">›</span>
-        </a>
+        </nav>
 
-    </nav>
+        <div class="animals">
+          🐰 🐼 🐾 💙
+        </div>
 
-</main>
+      </div>
+
+      <div class="right">
+        <img
+          src="1000012196.jpg"
+          alt="Foto profil saya"
+          class="profile-photo"
+        >
+      </div>
+
+    </section>
+
+    <footer>
+      💙 Terima kasih sudah mengunjungi website saya 💙
+    </footer>
+
+  </main>
 
 </body>
 </html>
+

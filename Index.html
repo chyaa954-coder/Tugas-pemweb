@@ -1,0 +1,280 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selamat Datang di Web Saya</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #e2f1ff, #f5fbff, #dcecff);
+            color: #123b7b;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 600px;
+            margin: auto;
+            padding: 55px 25px 40px;
+            text-align: center;
+            position: relative;
+        }
+
+        .greeting {
+            font-size: 25px;
+            letter-spacing: 8px;
+            font-weight: bold;
+            margin-bottom: 40px;
+        }
+
+        .profile {
+            width: 230px;
+            height: 230px;
+            margin: 0 auto 65px;
+            border: 8px solid #367bc5;
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: 0 12px 25px #4c82bd35;
+        }
+
+        .profile img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        h1 {
+            font-family: Georgia, serif;
+            font-size: clamp(35px, 7vw, 54px);
+            line-height: 1.18;
+            margin-bottom: 35px;
+            color: #103777;
+        }
+
+        .subtitle {
+            font-size: 21px;
+            line-height: 1.6;
+            margin-bottom: 45px;
+            color: #28558d;
+        }
+
+        .divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 28px;
+            margin-bottom: 55px;
+            color: #367bc5;
+            font-size: 43px;
+        }
+
+        .divider span {
+            display: block;
+            width: 100px;
+            height: 2px;
+            background: #79a9df;
+        }
+
+        .menu {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .menu a {
+            display: flex;
+            align-items: center;
+            min-height: 125px;
+            padding: 18px 28px;
+            border-radius: 80px;
+            text-decoration: none;
+            color: white;
+            background: linear-gradient(110deg, #17447f, #28558f);
+            border: 6px solid #b8d9ff;
+            box-shadow: 0 10px 0 #8cb9e8,
+                        0 15px 25px #32639b25;
+            transition: 0.25s;
+        }
+
+        .menu a:hover {
+            transform: translateY(-4px);
+            background: linear-gradient(110deg, #285f9f, #3979bd);
+        }
+
+        .menu-icon {
+            width: 90px;
+            height: 90px;
+            min-width: 90px;
+            border-radius: 50%;
+            background: #e4f2ff;
+            color: #123b7b;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+        }
+
+        .menu-text {
+            flex: 1;
+            text-align: left;
+            margin-left: 25px;
+            font-size: 22px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .arrow {
+            font-size: 38px;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+
+        .decoration {
+            position: fixed;
+            z-index: -1;
+            color: #b5d4f8;
+            opacity: 0.65;
+            font-size: 180px;
+            pointer-events: none;
+        }
+
+        .decoration.left {
+            top: 150px;
+            left: -35px;
+        }
+
+        .decoration.right {
+            bottom: 5px;
+            right: -35px;
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 40px 20px 35px;
+            }
+
+            .greeting {
+                font-size: 19px;
+                letter-spacing: 5px;
+            }
+
+            .profile {
+                width: 190px;
+                height: 190px;
+                margin-bottom: 50px;
+            }
+
+            h1 {
+                font-size: 36px;
+            }
+
+            .subtitle {
+                font-size: 17px;
+            }
+
+            .menu {
+                gap: 20px;
+            }
+
+            .menu a {
+                min-height: 95px;
+                padding: 12px 18px;
+                border-width: 4px;
+            }
+
+            .menu-icon {
+                width: 65px;
+                height: 65px;
+                min-width: 65px;
+                font-size: 30px;
+            }
+
+            .menu-text {
+                margin-left: 15px;
+                font-size: 15px;
+                letter-spacing: 1px;
+            }
+
+            .arrow {
+                font-size: 28px;
+            }
+
+            .divider {
+                margin-bottom: 45px;
+            }
+
+            .divider span {
+                width: 70px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="decoration left">❦</div>
+    <div class="decoration right">❦</div>
+
+    <main class="container">
+
+        <p class="greeting">HALO SEMUANYA!</p>
+
+        <div class="profile">
+            <img src="foto.jpg" alt="Foto Profil Saya">
+        </div>
+
+        <h1>Selamat Datang Di Web Saya</h1>
+
+        <p class="subtitle">
+            ❀ Mengenal lebih dekat tentang saya ❀
+        </p>
+
+        <div class="divider">
+            <span></span>
+            ♡
+            <span></span>
+        </div>
+
+        <nav class="menu">
+
+            <a href="profile.html">
+                <span class="menu-icon">♙</span>
+                <span class="menu-text">MY PROFILE</span>
+                <span class="arrow">›</span>
+            </a>
+
+            <a href="about.html">
+                <span class="menu-icon">♡</span>
+                <span class="menu-text">ABOUT ME</span>
+                <span class="arrow">›</span>
+            </a>
+
+            <a href="hobbies.html">
+                <span class="menu-icon">✿</span>
+                <span class="menu-text">MY HOBBIES</span>
+                <span class="arrow">›</span>
+            </a>
+
+            <a href="education.html">
+                <span class="menu-icon">♧</span>
+                <span class="menu-text">EDUCATION</span>
+                <span class="arrow">›</span>
+            </a>
+
+        </nav>
+
+    </main>
+
+</body>
+</html>

@@ -1,280 +1,302 @@
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Selamat Datang di Web Saya</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Website Pribadi Saya</title>
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        body {
-            font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #e2f1ff, #f5fbff, #dcecff);
-            color: #123b7b;
-            min-height: 100vh;
-            overflow-x: hidden;
-        }
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #d5eaff, #f4fbff, #c9e3ff);
+    color: #10458d;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
 
-        .container {
-            width: 100%;
-            max-width: 600px;
-            margin: auto;
-            padding: 55px 25px 40px;
-            text-align: center;
-            position: relative;
-        }
+/* Hiasan latar belakang */
+.decoration {
+    position: fixed;
+    z-index: 0;
+    color: #8dbcf5;
+    opacity: 0.55;
+    font-size: 150px;
+    pointer-events: none;
+}
 
-        .greeting {
-            font-size: 25px;
-            letter-spacing: 8px;
-            font-weight: bold;
-            margin-bottom: 40px;
-        }
+.decoration.left {
+    left: -35px;
+    top: 180px;
+}
 
-        .profile {
-            width: 230px;
-            height: 230px;
-            margin: 0 auto 65px;
-            border: 8px solid #367bc5;
-            border-radius: 50%;
-            overflow: hidden;
-            box-shadow: 0 12px 25px #4c82bd35;
-        }
+.decoration.right {
+    right: -30px;
+    bottom: 20px;
+}
 
-        .profile img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center;
-        }
+.container {
+    width: 100%;
+    max-width: 650px;
+    margin: auto;
+    padding: 25px 25px 45px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
 
-        h1 {
-            font-family: Georgia, serif;
-            font-size: clamp(35px, 7vw, 54px);
-            line-height: 1.18;
-            margin-bottom: 35px;
-            color: #103777;
-        }
+.greeting {
+    font-size: clamp(20px, 4vw, 30px);
+    letter-spacing: 7px;
+    font-weight: bold;
+    margin-bottom: 22px;
+}
 
-        .subtitle {
-            font-size: 21px;
-            line-height: 1.6;
-            margin-bottom: 45px;
-            color: #28558d;
-        }
+.profile {
+    width: 220px;
+    height: 220px;
+    margin: 0 auto 22px;
+    border: 7px solid #1765bb;
+    outline: 3px solid #a8d1ff;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 10px 25px #164c8c35;
+}
 
-        .divider {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 28px;
-            margin-bottom: 55px;
-            color: #367bc5;
-            font-size: 43px;
-        }
+.profile img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
 
-        .divider span {
-            display: block;
-            width: 100px;
-            height: 2px;
-            background: #79a9df;
-        }
+h1 {
+    font-family: Georgia, serif;
+    font-size: clamp(30px, 6vw, 44px);
+    line-height: 1.2;
+    margin: 18px 0 12px;
+    color: #10458d;
+}
 
-        .menu {
-            display: flex;
-            flex-direction: column;
-            gap: 24px;
-        }
+.subtitle {
+    font-size: clamp(16px, 3.5vw, 22px);
+    margin: 12px 0 22px;
+    line-height: 1.5;
+}
 
-        .menu a {
-            display: flex;
-            align-items: center;
-            min-height: 125px;
-            padding: 18px 28px;
-            border-radius: 80px;
-            text-decoration: none;
-            color: white;
-            background: linear-gradient(110deg, #17447f, #28558f);
-            border: 6px solid #b8d9ff;
-            box-shadow: 0 10px 0 #8cb9e8,
-                        0 15px 25px #32639b25;
-            transition: 0.25s;
-        }
+.divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    margin: 15px 0 30px;
+    font-size: 43px;
+    color: #1765bb;
+}
 
-        .menu a:hover {
-            transform: translateY(-4px);
-            background: linear-gradient(110deg, #285f9f, #3979bd);
-        }
+.divider span {
+    width: 100px;
+    height: 2px;
+    background: #397ec9;
+}
 
-        .menu-icon {
-            width: 90px;
-            height: 90px;
-            min-width: 90px;
-            border-radius: 50%;
-            background: #e4f2ff;
-            color: #123b7b;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 40px;
-        }
+/* Daftar menu */
+.menu {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+}
 
-        .menu-text {
-            flex: 1;
-            text-align: left;
-            margin-left: 25px;
-            font-size: 22px;
-            font-weight: bold;
-            letter-spacing: 2px;
-        }
+.menu a {
+    display: flex;
+    align-items: center;
+    min-height: 83px;
+    padding: 10px 23px;
+    border-radius: 60px;
+    text-decoration: none;
+    color: white;
+    background: linear-gradient(110deg, #10458d, #246ac0);
+    border: 5px solid #a9d2ff;
+    box-shadow:
+        0 5px 0 #72a9e6,
+        0 10px 18px #1b57952b;
+    transition: transform 0.2s, background 0.2s;
+}
 
-        .arrow {
-            font-size: 38px;
-            font-weight: bold;
-            margin-left: 10px;
-        }
+.menu a:hover {
+    transform: translateY(-3px);
+    background: linear-gradient(110deg, #1d5ca9, #3884d8);
+}
 
-        .decoration {
-            position: fixed;
-            z-index: -1;
-            color: #b5d4f8;
-            opacity: 0.65;
-            font-size: 180px;
-            pointer-events: none;
-        }
+.menu-icon {
+    width: 58px;
+    height: 58px;
+    min-width: 58px;
+    border-radius: 50%;
+    background: #e6f3ff;
+    color: #10458d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 29px;
+}
 
-        .decoration.left {
-            top: 150px;
-            left: -35px;
-        }
+.menu-text {
+    flex: 1;
+    text-align: left;
+    margin-left: 22px;
+    font-size: clamp(14px, 2.8vw, 20px);
+    font-weight: bold;
+    letter-spacing: 2px;
+}
 
-        .decoration.right {
-            bottom: 5px;
-            right: -35px;
-        }
+.arrow {
+    font-size: 32px;
+    font-weight: bold;
+    margin-left: 8px;
+}
 
-        @media (max-width: 480px) {
-            .container {
-                padding: 40px 20px 35px;
-            }
+/* Tampilan HP */
+@media (max-width: 480px) {
+    .container {
+        padding: 30px 18px 40px;
+    }
 
-            .greeting {
-                font-size: 19px;
-                letter-spacing: 5px;
-            }
+    .greeting {
+        letter-spacing: 4px;
+        margin-bottom: 25px;
+    }
 
-            .profile {
-                width: 190px;
-                height: 190px;
-                margin-bottom: 50px;
-            }
+    .profile {
+        width: 180px;
+        height: 180px;
+    }
 
-            h1 {
-                font-size: 36px;
-            }
+    h1 {
+        font-size: 34px;
+    }
 
-            .subtitle {
-                font-size: 17px;
-            }
+    .divider {
+        gap: 20px;
+        margin-bottom: 27px;
+    }
 
-            .menu {
-                gap: 20px;
-            }
+    .divider span {
+        width: 65px;
+    }
 
-            .menu a {
-                min-height: 95px;
-                padding: 12px 18px;
-                border-width: 4px;
-            }
+    .menu {
+        gap: 14px;
+    }
 
-            .menu-icon {
-                width: 65px;
-                height: 65px;
-                min-width: 65px;
-                font-size: 30px;
-            }
+    .menu a {
+        min-height: 77px;
+        padding: 8px 14px;
+        border-width: 4px;
+    }
 
-            .menu-text {
-                margin-left: 15px;
-                font-size: 15px;
-                letter-spacing: 1px;
-            }
+    .menu-icon {
+        width: 52px;
+        height: 52px;
+        min-width: 52px;
+        font-size: 26px;
+    }
 
-            .arrow {
-                font-size: 28px;
-            }
+    .menu-text {
+        margin-left: 15px;
+        letter-spacing: 1px;
+    }
 
-            .divider {
-                margin-bottom: 45px;
-            }
-
-            .divider span {
-                width: 70px;
-            }
-        }
-    </style>
+    .arrow {
+        font-size: 27px;
+    }
+}
+</style>
 </head>
 
 <body>
 
-    <div class="decoration left">❦</div>
-    <div class="decoration right">❦</div>
+<div class="decoration left">❦</div>
+<div class="decoration right">❦</div>
 
-    <main class="container">
+<main class="container">
 
-        <p class="greeting">HALO SEMUANYA!</p>
+    <p class="greeting">❧ HALO SEMUANYA! ❧</p>
 
-        <div class="profile">
-            <img src="foto.jpg" alt="Foto Profil Saya">
-        </div>
+    <div class="profile">
+        <img src="foto.jpg" alt="Foto profil saya">
+    </div>
 
-        <h1>Selamat Datang Di Web Saya</h1>
+    <h1>Selamat Datang Di Web Saya</h1>
 
-        <p class="subtitle">
-            ❀ Mengenal lebih dekat tentang saya ❀
-        </p>
+    <p class="subtitle">
+        ❀ Mengenal lebih dekat tentang saya ❀
+    </p>
 
-        <div class="divider">
-            <span></span>
-            ♡
-            <span></span>
-        </div>
+    <div class="divider">
+        <span></span>
+        ♡
+        <span></span>
+    </div>
 
-        <nav class="menu">
+    <nav class="menu">
 
-            <a href="profile.html">
-                <span class="menu-icon">♙</span>
-                <span class="menu-text">MY PROFILE</span>
-                <span class="arrow">›</span>
-            </a>
+        <a href="profile.html">
+            <span class="menu-icon">♙</span>
+            <span class="menu-text">MY PROFILE</span>
+            <span class="arrow">›</span>
+        </a>
 
-            <a href="about.html">
-                <span class="menu-icon">♡</span>
-                <span class="menu-text">ABOUT ME</span>
-                <span class="arrow">›</span>
-            </a>
+        <a href="about.html">
+            <span class="menu-icon">♡</span>
+            <span class="menu-text">ABOUT ME</span>
+            <span class="arrow">›</span>
+        </a>
 
-            <a href="hobbies.html">
-                <span class="menu-icon">✿</span>
-                <span class="menu-text">MY HOBBIES</span>
-                <span class="arrow">›</span>
-            </a>
+        <a href="hobbies.html">
+            <span class="menu-icon">✿</span>
+            <span class="menu-text">MY HOBBIES</span>
+            <span class="arrow">›</span>
+        </a>
 
-            <a href="education.html">
-                <span class="menu-icon">♧</span>
-                <span class="menu-text">EDUCATION</span>
-                <span class="arrow">›</span>
-            </a>
+        <a href="education.html">
+            <span class="menu-icon">♧</span>
+            <span class="menu-text">EDUCATION</span>
+            <span class="arrow">›</span>
+        </a>
 
-        </nav>
+        <a href="schedule.html">
+            <span class="menu-icon">▦</span>
+            <span class="menu-text">CLASS SCHEDULE</span>
+            <span class="arrow">›</span>
+        </a>
 
-    </main>
+        <a href="table1.html">
+            <span class="menu-icon">▤</span>
+            <span class="menu-text">TABLE 1</span>
+            <span class="arrow">›</span>
+        </a>
+
+        <a href="table2.html">
+            <span class="menu-icon">▤</span>
+            <span class="menu-text">TABLE 2</span>
+            <span class="arrow">›</span>
+        </a>
+
+        <a href="table3.html">
+            <span class="menu-icon">▤</span>
+            <span class="menu-text">TABLE 3</span>
+            <span class="arrow">›</span>
+        </a>
+
+    </nav>
+
+</main>
 
 </body>
 </html>

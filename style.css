@@ -1,46 +1,41 @@
-/* Reset dasar untuk menghilangkan margin bawaan browser */
+/* Reset margin dan padding bawaan browser */
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: border-box; /* */
 }
 
-/* Mengatur bar navigasi utama */
+/* Mengatur tampilan bilah navigasi utama */
 .navbar {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #333;
-  padding: 15px 30px;
+  justify-content: space-between; /* Logo di kiri, menu di kanan */ /* */
+  align-items: center; /* */
+  background-color: #333; /* Warna latar belakang gelap */ /* */
+  padding: 15px 30px; /* Jarak ruang di dalam navbar */ /* */
 }
 
-/* Mengatur warna teks logo */
 .logo {
-  color: #ddb7fc;
+  color: #fff;
   font-size: 24px;
   font-weight: bold;
 }
 
-/* Mengatur daftar menu agar sejajar horizontal */
+/* Mengatur struktur list menu agar menyamping */
 .nav-links {
   display: flex;
-  list-style: none;
+  list-style: none; /* Menghilangkan titik hitam bullet */ /* */
+  gap: 20px; /* Jarak antar menu */ /* */
 }
 
-/* Memberi jarak antar menu */
-.nav-links li {
-  margin-left: 20px;
-}
-
-/* Mengatur tampilan link/tautan */
+/* Mengatur teks link navigasi */
 .nav-links a {
-  color: #5af9a6;
-  text-decoration: none;
+  color: #fca3f5;
+  text-decoration: none; /* Menghilangkan garis bawah bawaan */ /* */
   font-size: 18px;
-  transition: color 0.3s;
+  transition: 0.3s; /* Efek transisi halus */ /* */
 }
 
-/* Efek saat kursor diarahkan ke menu (hover) */
+/* Efek interaktif saat kursor diarahkan ke menu */
 .nav-links a:hover {
-  color: #38ecfe; /* Warna emas */
+  color: #6de8ff; /* Mengubah warna teks menjadi kuning saat di-hover */
 }

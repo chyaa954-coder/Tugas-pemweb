@@ -16,7 +16,7 @@
 
 /* Mengatur warna teks logo */
 .logo {
-  color: #fff;
+  color: #ddb7fc;
   font-size: 24px;
   font-weight: bold;
 }
@@ -34,7 +34,7 @@
 
 /* Mengatur tampilan link/tautan */
 .nav-links a {
-  color: #fff;
+  color: #5af9a6;
   text-decoration: none;
   font-size: 18px;
   transition: color 0.3s;

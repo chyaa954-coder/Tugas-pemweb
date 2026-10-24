@@ -11,7 +11,7 @@
   justify-content: space-between; /* Logo di kiri, menu di kanan */ /* */
   align-items: center; /* */
   background-color: #333; /* Warna latar belakang gelap */ /* */
-  padding: 15px 30px; /* Jarak ruang di dalam navbar */ /* */
+  padding: 30px 30px; /* Jarak ruang di dalam navbar */ /* */
 }
 
 .logo {

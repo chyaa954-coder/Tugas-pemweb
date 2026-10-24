@@ -13,9 +13,9 @@
     <nav class="navbar">
         <div class="logo">MyBrand</div>
         <ul class="nav-links">
-            <li><a href="#home">Beranda</a></li>
-            <li><a href="#about">Tentang</a></li>
-            <li><a href="#services">Layanan</a></li>
+            <li><a href="#home">my profile</a></li>
+            <li><a href="#about">about me</a></li>
+            <li><a href="#services">my hobbyes</a></li>
             <li><a href="#contact">Kontak</a></li>
         </ul>
     </nav>

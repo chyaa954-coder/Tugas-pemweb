@@ -10,8 +10,8 @@
   display: flex;
   justify-content: space-between; /* Logo di kiri, menu di kanan */ /* */
   align-items: center; /* */
-  background-color: #333; /* Warna latar belakang gelap */ /* */
-  padding: 30px 30px; /* Jarak ruang di dalam navbar */ /* */
+  background-color: #333; /* Warna latar belakang putih: ; */ /* */
+  padding: 20px 20px; /* Jarak ruang di dalam navbar */ /* */
 }
 
 .logo {

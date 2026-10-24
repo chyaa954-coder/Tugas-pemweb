@@ -16,7 +16,7 @@
 
 .logo {
   color: #fff;
-  font-size: 24px;
+  font-size: 24pt;
   font-weight: bold;
 }
 
@@ -24,7 +24,7 @@
 .nav-links {
   display: flex;
   list-style: none; /* Menghilangkan titik hitam bullet */ /* */
-  gap: 20px; /* Jarak antar menu */ /* */
+  gap: 10px; /* Jarak antar menu */ /* */
 }
 
 /* Mengatur teks link navigasi */

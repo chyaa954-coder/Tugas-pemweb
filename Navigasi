@@ -15,8 +15,9 @@
         <ul class="nav-links">
             <li><a href="#home">my profile</a></li>
             <li><a href="#about">about me</a></li>
-            <li><a href="#services">my hobbyes</a></li>
-            <li><a href="#contact">Kontak</a></li>
+            <li><a href="#hobbies">my hobbies</a></li>
+            <li><a href="#educations">educations</a></li>
+            <li><a href="#"
         </ul>
     </nav>
 

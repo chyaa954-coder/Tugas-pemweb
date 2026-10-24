@@ -1,0 +1,46 @@
+/* Reset dasar untuk menghilangkan margin bawaan browser */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Mengatur bar navigasi utama */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  padding: 15px 30px;
+}
+
+/* Mengatur warna teks logo */
+.logo {
+  color: #fff;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Mengatur daftar menu agar sejajar horizontal */
+.nav-links {
+  display: flex;
+  list-style: none;
+}
+
+/* Memberi jarak antar menu */
+.nav-links li {
+  margin-left: 20px;
+}
+
+/* Mengatur tampilan link/tautan */
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  transition: color 0.3s;
+}
+
+/* Efek saat kursor diarahkan ke menu (hover) */
+.nav-links a:hover {
+  color: #38ecfe; /* Warna emas */
+}

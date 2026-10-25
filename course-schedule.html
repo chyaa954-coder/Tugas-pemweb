@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jadwal Kuliah</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            background-color: #a3a3a3;
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            background-color: #a3a3a3;
+            border: 1px solid #000000;
+            width: min(100%, 640px);
+            padding: 20px;
+            box-sizing: border-box;
+            overflow-x: auto;
+        }
+        h1 {
+            margin-top: 0;
+            margin-bottom: 25px;
+        }
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 2px;
+            border: 1px solid #000000;
+        }
+        th, td {
+            border: 1px solid #000000;
+            padding: 4px 6px;
+            text-align: left;
+        }
+        th {
+            font-weight: bold;
+            text-align: center;
+        }
+        .center-text {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Jadwal Kuliah</h1>
+        
+        <table>
+             
+            <!-- Header Tabel -->
+            <thead>
+                <tr>
+                    <th>Hari</th>
+                    <th>Jam</th>
+                    <th>Mata Kuliah</th>
+                    <th>Ruangan</th>
+                </tr>
+            </thead>
+            
+            <!-- Isi Tabel -->
+            <tbody>
+                <tr>
+                    <td>Senin</td>
+                    <td class="center-text">08:00 - 10:00</td>
+                    <td>Pemrograman Web</td>
+                    <td>Lab 1</td>
+                </tr>
+                <tr>
+                    <td>Selasa</td>
+                    <td class="center-text">10:00 - 12:00</td>
+                    <td>Basis Data</td>
+                    <td>Lab 2</td>
+                </tr>
+                <tr>
+                    <td>Rabu</td>
+                    <td class="center-text">08:00 - 10:00</td>
+                    <td>Algoritma</td>
+                    <td>Ruang 201</td>
+                </tr>
+                <tr>
+                    <td>Kamis</td>
+                    <td class="center-text">13:00 - 15:00</td>
+                    <td>Sistem Operasi</td>
+                    <td>Ruang 202</td>
+                </tr>
+                <!-- Baris Terakhir dengan Penggabungan Kolom (colspan) -->
+                <tr>
+                    <td colspan="3">Kegiatan Mahasiswa</td>
+                    <td>Aula</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>

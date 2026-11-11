@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Personal Website</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Trebuchet MS', sans-serif;
+    background: #eaf5ff;
+    color: #174b91;
+    padding: 20px;
+}
+
+.container {
+    max-width: 850px;
+    margin: auto;
+    background: white;
+    border: 3px solid #9ccaff;
+    border-radius: 25px;
+    padding: 25px;
+    box-shadow: 0 8px 25px #a9cbed;
+    text-align: center;
+}
+
+.decoration {
+    font-size: 35px;
+    margin: 10px;
+}
+
+.greeting {
+    letter-spacing: 5px;
+    font-size: 25px;
+    color: #1554a3;
+    margin: 15px 0;
+}
+
+.avatar {
+    width: 155px;
+    height: 155px;
+    border-radius: 50%;
+    background: #c8e5ff;
+    border: 6px solid #2874c9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 85px;
+    margin: 20px auto;
+    box-shadow: 0 5px 15px #a9cbed;
+}
+
+h1 {
+    font-family: Georgia, serif;
+    font-size: 32px;
+    margin: 15px 0;
+    color: #154b98;
+}
+
+.subtitle {
+    font-size: 17px;
+    margin-bottom: 20px;
+    color: #3974b9;
+}
+
+.line {
+    color: #2470c7;
+    font-size: 25px;
+    margin: 15px;
+}
+
+.menu {
+    max-width: 550px;
+    margin: auto;
+}
+
+.menu a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    background: linear-gradient(90deg, #3986db, #1552a5);
+    color: white;
+    padding: 12px 20px;
+    margin: 12px 0;
+    border-radius: 50px;
+    border: 4px solid #a8d3ff;
+    box-shadow: 0 5px 10px #c2dcf5;
+    transition: 0.3s;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.menu a:hover {
+    transform: scale(1.04);
+    background: #0d3e83;
+}
+
+.menu-icon {
+    background: #e5f3ff;
+    color: #174f9c;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    margin-right: 20px;
+}
+
+.arrow {
+    margin-left: auto;
+    font-size: 25px;
+}
+
+section {
+    margin-top: 35px;
+    padding: 25px;
+    background: #f0f8ff;
+    border: 2px solid #a7d0fa;
+    border-radius: 20px;
+    text-align: left;
+}
+
+section h2 {
+    text-align: center;
+    color: #1554a3;
+    margin-bottom: 20px;
+    font-family: Georgia, serif;
+}
+
+section p {
+    line-height: 1.8;
+    margin: 10px 0;
+}
+
+.animal {
+    text-align: center;
+    font-size: 40px;
+    margin: 15px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    background: white;
+}
+
+th, td {
+    border: 1px solid #75a9e4;
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background: #3986db;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background: #e4f2ff;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 11px;
+    border: 1px solid #80b4e9;
+    border-radius: 10px;
+    margin: 7px 0 15px;
+    font-family: inherit;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    width: auto;
+    margin-right: 7px;
+}
+
+button {
+    background: #2468b8;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    margin: 5px;
+}
+
+button:hover {
+    background: #123f80;
+}
+
+.back {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    color: #1554a3;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer {
+    margin-top: 30px;
+    padding: 15px;
+    text-align: center;
+    color: #3974b9;
+}
+
+@media(max-width: 500px) {
+    body {
+        padding: 8px;
+    }
+
+    .container {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 25px;
+    }
+
+    .greeting {
+        font-size: 19px;
+    }
+
+    .menu a {
+        font-size: 13px;
+        padding: 9px;
+    }
+
+    section {
+        padding: 15px;
+        overflow-x: auto;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container" id="home">
+
+    <div class="decoration">🌸 🦋 🌸</div>
+
+    <div class="greeting">HALO SEMUANYA!</div>
+
+    <div class="avatar">🐰</div>
+
+    <h1>Selamat Datang Di Web Saya</h1>
+
+    <p class="subtitle">
+        🌼 Mengenal lebih dekat tentang saya 🌼
+    </p>
+
+    <div class="line">──── ♡ ────</div>
+
+    <!-- MENU UTAMA -->
+
+    <div class="menu">
+
+        <a href="#profile">
+            <span class="menu-icon">♙</span>
+            MY PROFILE
+            <span class="arrow">›</span>
+        </a>
+
+        <a href="#about">
+            <span class="menu-icon">♡</span>
+            ABOUT ME
+            <span class="arrow">›</span>
+        </a>
+
+        <a href="#hobbies">
+            <span class="menu-icon">🌸</span>
+            MY HOBBIES
+            <span class="arrow">›</span>
+        </a>
+
+        <a href="#education">
+            <span class="menu-icon">🎓</span>
+            EDUCATION
+            <span class="arrow">›</span>
+        </a>
+
+        <a href="#schedule">
+            <span class="menu-icon">📅</span>
+            CLASS SCHEDULE
+            <span class="arrow">›</span>
+        </a>
+
+        <a href="#table1">
+            <span class="menu-icon">📋</span>
+            TABLE 1
+            <span class="arrow">›</span>
+        </a>
+
+        <a href="#table2">
+            <span class="menu-icon">📋</span>
+            TABLE 2
+            <span class="arrow">›</span>
+        </a>
+
+        <a href="#table3">
+            <span class="menu-icon">📋</span>
+            TABLE 3
+            <span class="arrow">›</span>
+        </a>
+
+        <a href="#formulir">
+            <span class="menu-icon">📝</span>
+            FORMULIR
+            <span class="arrow">›</span>
+        </a>
+
+    </div>
+
+    <div class="animal">🐻 🐰 🐱 🐼</div>
+
+    <p>Thank You For Visiting My Website 💙</p>
+
+
+    <!-- MY PROFILE -->
+
+    <section id="profile">
+        <h2>🌷 My Profile 🌷</h2>
+        <div class="animal">👩🏻‍🎓</div>
+        <p><b>Nama:</b> Isi nama kamu</p>
+        <p><b>Tempat Lahir:</b> Isi tempat lahir</p>
+        <p><b>Tanggal Lahir:</b> Isi tanggal lahir</p>
+        <p><b>Alamat:</b> Isi alamat kamu</p>
+        <p><b>Email:</b> Isi email kamu</p>
+        <a class="back" href="#home">⬆ Kembali ke Beranda</a>
+    </section>
+
+
+    <!-- ABOUT ME -->
+
+    <section id="about">
+        <h2>💗 About Me 💗</h2>
+        <div class="animal">🐰 🌷 🦋</div>
+        <p>
+            Halo! Perkenalkan, saya adalah seseorang yang
+            senang belajar hal baru, mengembangkan kemampuan,
+            dan mencoba berbagai pengalaman menarik.
+        </p>
+        <p>
+            Website ini dibuat untuk memperkenalkan diri,
+            hobi, pendidikan, dan kegiatan saya.
+        </p>
+        <a class="back" href="#home">⬆ Kembali ke Beranda</a>
+    </section>
+
+
+    <!-- MY HOBBIES -->
+
+    <section id="hobbies">
+        <h2>🌸 My Hobbies 🌸</h2>
+        <div class="animal">📚 🎮 🏸 📸</div>
+
+        <p>Beberapa hobi saya adalah:</p>
+        <ul>
+            <li>Membaca</li>
+            <li>Olahraga</li>
+            <li>Bermain Game</li>
+            <li>Fotografi</li>
+        </ul>
+
+        <h3>Urutan Hobi Favorit</h3>
+        <ol type="A">
+            <li>Programming</li>
+            <li>Gaming</li>
+            <li>Badminton</li>
+            <li>Traveling</li>
+        </ol>
+
+        <a class="back" href="#home">⬆ Kembali ke Beranda</a>
+    </section>
+
+
+    <!-- EDUCATION -->
+
+    <section id="education">
+        <h2>🎓 Education 🎓</h2>
+        <div class="animal">📚 🏫 ✏️</div>
+
+        <table>
+            <tr>
+                <th>No</th>
+                <th>Nama Sekolah</th>
+                <th>Tahun</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>SD Negeri Kediri</td>
+                <td>2014-2020</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>SMP Negeri 1 Binong</td>
+                <td>2020-2023</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>SMA Negeri 1 Pagaden</td>
+                <td>2023-2026</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Universitas Mendiri</td>
+                <td>2026-sekarang</td>
+            </tr>
+        </table>
+
+        <a class="back" href="#home">⬆ Kembali ke Beranda</a>
+    </section>
+
+
+    <!-- CLASS SCHEDULE -->
+
+    <section id="schedule">
+        <h2>📅 Class Schedule 📅</h2>
+
+        <table>
+            <tr>
+                <th>Hari</th>
+                <th>Jam</th>
+                <th>Mata Kuliah</th>
+                <th>Ruangan</th>
+            </tr>
+            <tr>
+                <td>Senin</td>
+                <td>08:00-10:00</td>
+                <td>Pemrograman Web</td>
+                <td>Lab 1</td>
+            </tr>
+            <tr>
+                <td>Selasa</td>
+                <td>10:00-12:00</td>
+                <td>Basis Data</td>
+                <td>Lab 2</td>
+            </tr>
+            <tr>
+                <td>Rabu</td>
+                <td>08:00-10:00</td>
+                <td>Algoritma</td>
+                <td>Ruang 201</td>
+            </tr>
+            <tr>
+                <td>Kamis</td>
+                <td>13:00-15:00</td>
+                <td>Sistem Operasi</td>
+                <td>Ruang 202</td>
+            </tr>
+        </table>
+
+        <a class="back" href="#home">⬆ Kembali ke Beranda</a>
+    </section>
+
+
+    <!-- TABLE 1 -->
+
+    <section id="table1">
+        <h2>📋 Table 1</h2>
+
+        <table>
+            <tr>
+                <th>Hari</th>
+                <th>Jam</th>
+                <th>Kode</th>
+                <th>Mata Kuliah</th>
+                <th>Ruangan</th>
+            </tr>
+            <tr>
+                <td rowspan="2">Senin</td>
+                <td>08:00-10:00</td>
+                <td>IF101</td>
+                <td>Pemrograman Web</td>
+                <td>Lab 1</td>
+            </tr>
+            <tr>
+                <td>10:00-12:00</td>
+                <td>IF102</td>
+                <td>Basis Data</td>
+                <td>Lab 2</td>
+            </tr>
+            <tr>
+                <td rowspan="3">Selasa</td>
+                <td>08:00-10:00</td>
+                <td>IF103</td>
+                <td>Algoritma</td>
+                <td>Ruang 201</td>
+            </tr>
+            <tr>
+                <td>10:00-12:00</td>
+                <td>IF104</td>
+                <td>Sistem Operasi</td>
+                <td>Ruang 202</td>
+            </tr>
+            <tr>
+                <td>13:00-15:00</td>
+                <td>IF105</td>
+                <td>Jaringan Komputer</td>
+                <td>Lab 3</td>
+            </tr>
+            <tr>
+                <td>Rabu</td>
+                <td>08:00-10:00</td>
+                <td>IF106</td>
+                <td>Pemrograman Mobile</td>
+                <td>Lab 4</td>
+            </tr>
+            <tr>
+                <td>Rabu</td>
+                <td>10:00-12:00</td>
+                <td>IF107</td>
+                <td>Rekayasa Perangkat Lunak</td>
+                <td>Ruang 203</td>
+            </tr>
+        </table>
+
+        <a class="back" href="#home">⬆ Kembali ke Beranda</a>
+    </section>
+
+
+    <!-- TABLE 2 -->
+
+    <section id="table2">
+        <h2>📋 Table 2</h2>
+
+        <table>
+            <tr>
+                <th rowspan="2">Hari</th>
+                <th colspan="2">Pagi</th>
+                <th colspan="2">Siang</th>
+                <th rowspan="2">Keterangan</th>
+            </tr>
+            <tr>
+                <th>08-10</th>
+                <th>10-12</th>
+                <th>13-15</th>
+                <th>15-17</th>
+            </tr>
+            <tr>
+                <td rowspan="2">Senin</td>
+                <td>Web 1</td>
+                <td>Web 2</td>
+                <td colspan="2">Praktikum Basis Data</td>
+                <td rowspan="2">Normal</td>
+            </tr>
+            <tr>
+                <td colspan="2">Praktikum Pemrograman</td>
+                <td>Jaringan</td>
+                <td>Jaringan</td>
+            </tr>
+            <tr>
+                <td>Selasa</td>
+                <td colspan="2">Seminar</td>
+                <td>Mobile</td>
+                <td>Mobile</td>
+                <td>Seminar Pagi</td>
+            </tr>
+            <tr>
+                <td rowspan="2">Rabu</td>
+                <td>Web</td>
+                <td>Web</td>
+                <td rowspan="2" colspan="2">Maintenance Laboratorium</td>
+                <td rowspan="2">Maintenance</td>
+            </tr>
+            <tr>
+                <td colspan="2">Basis Data</td>
+            </tr>
+            <tr>
+                <td>Kamis</td>
+                <td>Algoritma</td>
+                <td>Algoritma</td>
+                <td colspan="2">Praktikum Jaringan</td>
+                <td>Normal</td>
+            </tr>
+            <tr>
+                <th colspan="5">Catatan</th>
+                <td>Jadwal dapat berubah</td>
+            </tr>
+        </table>
+
+        <a class="back" href="#home">⬆ Kembali ke Beranda</a>
+    </section>
+
+
+    <!-- TABLE 3 -->
+
+    <section id="table3">
+        <h2>📋 Table 3</h2>
+        <div class="animal">🐻 📖 🌼</div>
+
+        <table>
+            <tr>
+                <th>No</th>
+                <th>Nama Kegiatan</th>
+                <th>Hari</th>
+                <th>Keterangan</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Belajar HTML</td>
+                <td>Senin</td>
+                <td>Selesai</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Belajar CSS</td>
+                <td>Selasa</td>
+                <td>Selesai</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Belajar JavaScript</td>
+                <td>Rabu</td>
+                <td>Berjalan</td>
+            </tr>
+        </table>
+
+        <a class="back" href="#home">⬆ Kembali ke Beranda</a>
+    </section>
+
+
+    <!-- FORMULIR -->
+
+    <section id="formulir">
+        <h2>📝 Formulir Pendaftaran</h2>
+        <div class="animal">🐰 💙 🌸</div>
+
+        <form action="#" method="get">
+
+            <label>Nama Lengkap:</label>
+            <input type="text" name="nama"
+                   placeholder="Masukkan nama lengkap" required>
+
+            <label>Email:</label>
+            <input type="email" name="email"
+                   placeholder="Masukkan email" required>
+
+            <label>Password:</label>
+            <input type="password" name="password"
+                   placeholder="Masukkan password" required>
+
+            <label>Umur:</label>
+            <input type="number" name="umur"
+                   placeholder="Masukkan umur">
+
+            <label>Tanggal Lahir:</label>
+            <input type="date" name="tanggal">
+
+            <p>Jenis Kelamin:</p>
+            <input type="radio" name="gender" value="Laki-laki">
+            Laki-laki<br>
+
+            <input type="radio" name="gender" value="Perempuan">
+            Perempuan<br><br>
+
+            <p>Hobi:</p>
+            <input type="checkbox" name="hobi" value="Membaca">
+            Membaca<br>
+
+            <input type="checkbox" name="hobi" value="Olahraga">
+            Olahraga<br>
+
+            <input type="checkbox" name="hobi" value="Gaming">
+            Gaming<br><br>
+
+            <label>Jurusan:</label>
+            <select name="jurusan">
+                <option value="">Pilih Jurusan</option>
+                <option>Informatika</option>
+                <option>Sistem Informasi</option>
+                <option>Manajemen</option>
+                <option>Akuntansi</option>
+            </select>
+
+            <label>Alamat:</label>
+            <textarea name="alamat" rows="5"
+                placeholder="Masukkan alamat"></textarea>
+
+            <label>Foto:</label>
+            <input type="file" name="foto" accept="image/*">
+
+            <label>Website:</label>
+            <input type="url" name="website"
+                placeholder="https://example.com">
+
+            <button type="submit">Kirim 💙</button>
+            <button type="reset">Reset 🔄</button>
+
+        </form>
+
+        <a class="back" href="#home">⬆ Kembali ke Beranda</a>
+    </section>
+
+
+    <footer>
+        <div class="animal">🌷 🐻 🐰 🦋 🌷</div>
+        <p>© 2026 My Personal Website</p>
+        <p>Made with Love 💙</p>
+    </footer>
+
+</div>
+
+</body>
+</html>

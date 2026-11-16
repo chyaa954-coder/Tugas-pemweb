@@ -1,338 +1,469 @@
 <!DOCTYPE html>
-<html lang="id">
+< lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>My Personal Website</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Profil Saya</title>
 
-<style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-body {
-    font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #d8efff, #f5fbff, #c5e5ff);
-    color: #164477;
-    min-height: 100vh;
-    overflow-x: hidden;
-}
+        html {
+            scroll-behavior: smooth;
+        }
 
-/* HEADER */
-header {
-    text-align: center;
-    padding: 30px 15px 15px;
-    position: relative;
-}
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(180deg, #d9f0ff, #eef9ff);
+            color: #123c85;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
 
-.hello {
-    font-size: 25px;
-    letter-spacing: 5px;
-    font-weight: bold;
-    color: #164b91;
-    margin-bottom: 20px;
-}
+        .container {
+            width: 100%;
+            max-width: 900px;
+            margin: auto;
+            padding: 30px 20px;
+            text-align: center;
+            position: relative;
+        }
 
-.profile-photo {
-    width: 155px;
-    height: 155px;
-    border-radius: 50%;
-    border: 6px solid #2878c9;
-    object-fit: cover;
-    box-shadow: 0 8px 20px #75b9ed;
-}
+        .greeting {
+            font-size: 32px;
+            letter-spacing: 4px;
+            margin-bottom: 22px;
+            font-weight: bold;
+        }
 
-h1 {
-    font-family: Georgia, serif;
-    font-size: 35px;
-    margin-top: 20px;
-    color: #164477;
-}
+        .profile-photo {
+            width: 175px;
+            height: 175px;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 50%;
+            border: 7px solid #2476e9;
+            background: white;
+            box-shadow: 0 5px 15px #8abdf5;
+        }
 
-.subtitle {
-    font-size: 18px;
-    color: #477aa8;
-    margin-top: 12px;
-}
+        h1 {
+            font-size: 32px;
+            margin-top: 20px;
+            margin-bottom: 12px;
+        }
 
-.decoration {
-    margin: 25px 0;
-    font-size: 35px;
-}
+        .subtitle {
+            font-size: 19px;
+            margin-bottom: 28px;
+        }
 
-/* HEWAN LUCU */
-.animal {
-    position: absolute;
-    font-size: 65px;
-    opacity: 0.9;
-    z-index: -1;
-}
+        .decoration {
+            font-size: 35px;
+            margin: 10px;
+        }
 
-.cat {
-    top: 15px;
-    left: 5px;
-}
+        .menu {
+            max-width: 650px;
+            margin: 25px auto;
+        }
 
-.bunny {
-    top: 190px;
-    left: 5px;
-}
+        .menu a {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            text-decoration: none;
+            color: white;
+            background: linear-gradient(90deg, #1260cb, #2878e6);
+            margin: 10px 0;
+            padding: 9px 18px;
+            min-height: 76px;
+            border: 4px solid #8bc7ff;
+            outline: 2px solid white;
+            border-radius: 50px;
+            box-shadow: 0 5px 10px #b0d7ff;
+            font-size: 19px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            transition: 0.3s;
+        }
 
-.panda {
-    top: 190px;
-    right: 5px;
-}
+        .menu a:hover {
+            transform: scale(1.03);
+            background: #064ba8;
+        }
 
-.chick {
-    top: 15px;
-    right: 5px;
-}
+        .menu-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            width: 57px;
+            height: 57px;
+            border-radius: 50%;
+            color: #124b9d;
+            background: #f1f8ff;
+            font-size: 29px;
+        }
 
-.bear {
-    bottom: 20px;
-    left: 5px;
-}
+        .menu-text {
+            flex: 1;
+            text-align: left;
+        }
 
-.penguin {
-    bottom: 20px;
-    right: 5px;
-}
+        .arrow {
+            font-size: 34px;
+            margin-right: 6px;
+        }
 
-/* MENU */
-.menu {
-    width: 90%;
-    max-width: 550px;
-    margin: 20px auto 40px;
-}
+        .animals {
+            position: fixed;
+            font-size: 65px;
+            z-index: -1;
+            opacity: 0.9;
+            pointer-events: none;
+        }
 
-.menu a {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    color: white;
-    background: linear-gradient(100deg, #1764b9, #398bdc);
-    border: 4px solid #a6d8ff;
-    border-radius: 60px;
-    padding: 12px 18px;
-    margin-bottom: 15px;
-    min-height: 82px;
-    box-shadow: 0 7px 0 #8bbde7,
-                0 10px 18px #b4d9f3;
-    transition: 0.3s;
-}
+        .animal-one {
+            top: 15px;
+            left: 8px;
+        }
 
-.menu a:active {
-    transform: scale(0.96);
-}
+        .animal-two {
+            top: 35px;
+            right: 8px;
+        }
 
-.menu a:hover {
-    background: linear-gradient(100deg, #398bdc, #1254a5);
-}
+        .animal-three {
+            bottom: 5px;
+            left: 8px;
+        }
 
-.icon {
-    width: 55px;
-    height: 55px;
-    border-radius: 50%;
-    background: #e7f5ff;
-    color: #17569c;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 28px;
-    flex-shrink: 0;
-}
+        .animal-four {
+            bottom: 5px;
+            right: 8px;
+        }
 
-.menu-text {
-    flex: 1;
-    margin-left: 20px;
-    font-size: 16px;
-    font-weight: bold;
-    letter-spacing: 2px;
-}
+        .content-section {
+            background: white;
+            padding: 25px;
+            margin: 25px auto;
+            max-width: 650px;
+            border-radius: 20px;
+            box-shadow: 0 5px 15px #b4d9ff;
+            text-align: left;
+            scroll-margin-top: 20px;
+        }
 
-.arrow {
-    font-size: 28px;
-    margin-right: 5px;
-}
+        .content-section h2 {
+            margin-bottom: 15px;
+            color: #1258b5;
+        }
 
-/* HALAMAN KONTEN */
-.content {
-    width: 90%;
-    max-width: 550px;
-    margin: 30px auto;
-}
+        .content-section p {
+            line-height: 1.8;
+        }
 
-.page {
-    background: #e8f5ff;
-    border: 2px solid #9bcdf4;
-    border-radius: 25px;
-    padding: 25px;
-    margin-bottom: 20px;
-    text-align: center;
-    box-shadow: 0 5px 15px #b8d9f0;
-}
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 12px;
+            background: white;
+        }
 
-.page h2 {
-    color: #15589e;
-    margin-bottom: 15px;
-}
+        th, td {
+            border: 1px solid #7cb8f5;
+            padding: 10px;
+            text-align: left;
+        }
 
-.page p {
-    color: #456b8c;
-    line-height: 1.8;
-}
+        th {
+            background: #1768cf;
+            color: white;
+        }
 
-.back {
-    display: inline-block;
-    margin-top: 15px;
-    padding: 10px 25px;
-    border-radius: 30px;
-    background: #287bc7;
-    color: white;
-    text-decoration: none;
-}
+        tr:nth-child(even) {
+            background: #eaf5ff;
+        }
 
-footer {
-    text-align: center;
-    padding: 25px;
-    color: #477aa8;
-    font-size: 14px;
-}
-</style>
+        footer {
+            padding: 20px;
+            color: #174c91;
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 25px 15px;
+            }
+
+            .greeting {
+                font-size: 24px;
+                letter-spacing: 2px;
+            }
+
+            .profile-photo {
+                width: 150px;
+                height: 150px;
+            }
+
+            h1 {
+                font-size: 25px;
+            }
+
+            .subtitle {
+                font-size: 16px;
+            }
+
+            .menu a {
+                min-height: 65px;
+                gap: 12px;
+                padding: 7px 12px;
+                font-size: 14px;
+            }
+
+            .menu-icon {
+                width: 48px;
+                height: 48px;
+                font-size: 24px;
+            }
+
+            .arrow {
+                font-size: 27px;
+            }
+
+            .animals {
+                font-size: 40px;
+            }
+
+            .content-section {
+                padding: 16px;
+                overflow-x: auto;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-<header id="home">
+    <!-- Hiasan hewan lucu -->
+    <div class="animals animal-one">🐱</div>
+    <div class="animals animal-two">🐥</div>
+    <div class="animals animal-three">🐻</div>
+    <div class="animals animal-four">🐧</div>
 
-    <div class="animal cat">🐱</div>
-    <div class="animal bunny">🐰</div>
-    <div class="animal panda">🐼</div>
-    <div class="animal chick">🐥</div>
-    <div class="animal bear">🐻</div>
-    <div class="animal penguin">🐧</div>
+    <div class="container">
 
-    <div class="hello">✦ HALO SEMUANYA! ✦</div>
+        <div class="greeting">HALO SEMUANYA!</div>
 
-    <!-- Ganti foto.jpg dengan foto pribadi -->
-    <img src="foto.jpg" class="profile-photo"
-         alt="Foto Profil">
+        <!-- Foto diganti dengan foto kamu -->
+        <img
+            src="1000012196.jpg"
+            alt="Foto Profil Saya"
+            class="profile-photo"
+        >
 
-    <h1>Selamat Datang Di Web Saya</h1>
+        <h1>Selamat Datang Di Web Saya</h1>
 
-    <p class="subtitle">
-        🐾 Mengenal lebih dekat tentang saya 🐾
-    </p>
+        <p class="subtitle">
+            Mengenal lebih dekat tentang saya
+        </p>
 
-    <div class="decoration">
-        ───── ♡ ─────
+        <div class="decoration">🐾 ♡ 🐾</div>
+
+        <!-- Menu utama -->
+        <nav class="menu">
+
+            <a href="#profile">
+                <span class="menu-icon">♙</span>
+                <span class="menu-text">MY PROFILE</span>
+                <span class="arrow">›</span>
+            </a>
+
+            <a href="#about">
+                <span class="menu-icon">♡</span>
+                <span class="menu-text">ABOUT ME</span>
+                <span class="arrow">›</span>
+            </a>
+
+            <a href="#hobbies">
+                <span class="menu-icon">✿</span>
+                <span class="menu-text">MY HOBBIES</span>
+                <span class="arrow">›</span>
+            </a>
+
+            <a href="#education">
+                <span class="menu-icon">🎓</span>
+                <span class="menu-text">EDUCATION</span>
+                <span class="arrow">›</span>
+            </a>
+
+            <a href="#schedule">
+                <span class="menu-icon">▦</span>
+                <span class="menu-text">CLASS SCHEDULE</span>
+                <span class="arrow">›</span>
+            </a>
+
+            <a href="#table1">
+                <span class="menu-icon">▤</span>
+                <span class="menu-text">TABLE 1</span>
+                <span class="arrow">›</span>
+            </a>
+
+            <a href="#table2">
+                <span class="menu-icon">▤</span>
+                <span class="menu-text">TABLE 2</span>
+                <span class="arrow">›</span>
+            </a>
+
+            <a href="#table3">
+                <span class="menu-icon">▤</span>
+                <span class="menu-text">TABLE 3</span>
+                <span class="arrow">›</span>
+            </a>
+
+        </nav>
+
+        <!-- Bagian profil -->
+        <section class="content-section" id="profile">
+            <h2>My Profile 👩🏻</h2>
+            <p>Nama: Isi nama kamu</p>
+            <p>Tempat, tanggal lahir: Isi di sini</p>
+            <p>Alamat: Isi alamat kamu</p>
+        </section>
+
+        <!-- Tentang saya -->
+        <section class="content-section" id="about">
+            <h2>About Me 💙</h2>
+            <p>
+                Halo semuanya! Selamat datang di website pribadi saya.
+                Website ini dibuat untuk memperkenalkan diri,
+                pendidikan, hobi, dan kegiatan saya.
+            </p>
+        </section>
+
+        <!-- Hobi -->
+        <section class="content-section" id="hobbies">
+            <h2>My Hobbies 🌸</h2>
+            <p>♡ Mendengarkan musik</p>
+            <p>♡ Menonton film</p>
+            <p>♡ Membaca</p>
+            <p>♡ Menghabiskan waktu bersama keluarga</p>
+        </section>
+
+        <!-- Pendidikan -->
+        <section class="content-section" id="education">
+            <h2>Education 🎓</h2>
+            <table>
+                <tr>
+                    <th>No.</th>
+                    <th>Jenjang</th>
+                    <th>Tahun</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>SD</td>
+                    <td>2014–2020</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>SMP</td>
+                    <td>2020–2023</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>SMA</td>
+                    <td>2023–2026</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>S1</td>
+                    <td>2026–sekarang</td>
+                </tr>
+            </table>
+        </section>
+
+        <!-- Jadwal kelas -->
+        <section class="content-section" id="schedule">
+            <h2>Class Schedule 📚</h2>
+            <table>
+                <tr>
+                    <th>Hari</th>
+                    <th>Mata Pelajaran</th>
+                    <th>Waktu</th>
+                </tr>
+                <tr>
+                    <td>Senin</td>
+                    <td>Mata pelajaran 1</td>
+                    <td>08.00–10.00</td>
+                </tr>
+                <tr>
+                    <td>Selasa</td>
+                    <td>Mata pelajaran 2</td>
+                    <td>08.00–10.00</td>
+                </tr>
+            </table>
+        </section>
+
+        <!-- Tabel 1 -->
+        <section class="content-section" id="table1">
+            <h2>Table 1</h2>
+            <table>
+                <tr>
+                    <th>No.</th>
+                    <th>Nama</th>
+                    <th>Keterangan</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Contoh nama</td>
+                    <td>Contoh keterangan</td>
+                </tr>
+            </table>
+        </section>
+
+        <!-- Tabel 2 -->
+        <section class="content-section" id="table2">
+            <h2>Table 2</h2>
+            <table>
+                <tr>
+                    <th>No.</th>
+                    <th>Data</th>
+                    <th>Keterangan</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Contoh data</td>
+                    <td>Contoh keterangan</td>
+                </tr>
+            </table>
+        </section>
+
+        <!-- Tabel 3 -->
+        <section class="content-section" id="table3">
+            <h2>Table 3</h2>
+            <table>
+                <tr>
+                    <th>No.</th>
+                    <th>Data</th>
+                    <th>Keterangan</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Contoh data</td>
+                    <td>Contoh keterangan</td>
+                </tr>
+            </table>
+        </section>
+
+        <footer>
+            💙 Terima kasih sudah mengunjungi website saya! 🐻
+        </footer>
+
     </div>
 
-</header>
-
-<!-- NAVIGASI MENU -->
-<nav class="menu">
-
-    <a href="#profile">
-        <div class="icon">👤</div>
-        <div class="menu-text">MY PROFILE</div>
-        <div class="arrow">›</div>
-    </a>
-
-    <a href="#about">
-        <div class="icon">♡</div>
-        <div class="menu-text">ABOUT ME</div>
-        <div class="arrow">›</div>
-    </a>
-
-    <a href="#hobbies">
-        <div class="icon">🌸</div>
-        <div class="menu-text">MY HOBBIES</div>
-        <div class="arrow">›</div>
-    </a>
-
-    <a href="#education">
-        <div class="icon">🎓</div>
-        <div class="menu-text">EDUCATION</div>
-        <div class="arrow">›</div>
-    </a>
-
-    <a href="#schedule">
-        <div class="icon">📅</div>
-        <div class="menu-text">CLASS SCHEDULE</div>
-        <div class="arrow">›</div>
-    </a>
-
-    <a href="#table1">
-        <div class="icon">📋</div>
-        <div class="menu-text">TABLE 1</div>
-        <div class="arrow">›</div>
-    </a>
-
-    <a href="#table2">
-        <div class="icon">📋</div>
-        <div class="menu-text">TABLE 2</div>
-        <div class="arrow">›</div>
-    </a>
-
-</nav>
-
-<!-- HALAMAN TUJUAN NAVIGASI -->
-<main class="content">
-
-    <section class="page" id="profile">
-        <h2>👤 My Profile</h2>
-        <p>Selamat datang di halaman profil saya.</p>
-        <a href="#home" class="back">Kembali ke Beranda</a>
-    </section>
-
-    <section class="page" id="about">
-        <h2>💙 About Me</h2>
-        <p>Ini adalah halaman tentang diri saya.</p>
-        <a href="#home" class="back">Kembali ke Beranda</a>
-    </section>
-
-    <section class="page" id="hobbies">
-        <h2>🌸 My Hobbies</h2>
-        <p>Ini adalah halaman hobi saya.</p>
-        <a href="#home" class="back">Kembali ke Beranda</a>
-    </section>
-
-    <section class="page" id="education">
-        <h2>🎓 Education</h2>
-        <p>Ini adalah halaman pendidikan saya.</p>
-        <a href="#home" class="back">Kembali ke Beranda</a>
-    </section>
-
-    <section class="page" id="schedule">
-        <h2>📅 Class Schedule</h2>
-        <p>Ini adalah halaman jadwal pelajaran.</p>
-        <a href="#home" class="back">Kembali ke Beranda</a>
-    </section>
-
-    <section class="page" id="table1">
-        <h2>📋 Table 1</h2>
-        <p>Halaman tabel pertama.</p>
-        <a href="#home" class="back">Kembali ke Beranda</a>
-    </section>
-
-    <section class="page" id="table2">
-        <h2>📋 Table 2</h2>
-        <p>Halaman tabel kedua.</p>
-        <a href="#home" class="back">Kembali ke Beranda</a>
-    </section>
-
-</main>
-
-<footer>
-    💙 My Personal Website 💙
-    <br>
-    Made with Love 🐻
-</footer>
-
 </body>
-</html>
-
-
+</>
